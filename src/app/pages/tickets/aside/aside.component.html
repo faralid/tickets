@@ -1,0 +1,45 @@
+<!--<p class="menu">Тип меню</p>
+<p-dropdown [options]="menuTypes"
+            [(ngModel)]="selectedMenuType"
+            optionLabel="label"
+            (onChange)="changeType($event)">
+
+</p-dropdown>-->
+
+<div>
+  <p-dropdown [options]="menuTypes"
+              [(ngModel)]="selectedMenuType"
+              optionLabel="label"
+              (onChange)="changeType($event)">
+  </p-dropdown>
+</div>
+<!--Добавлен новый список-->
+<div class="mt-3">
+  <p-dropdown class="mt-3"
+              [options]="tourTypes"
+              optionLabel="label"
+              (onChange)="changeTourType($event)">
+  </p-dropdown>
+</div>
+<div class="mt-3">
+  <span>Выбрать дату</span>
+  <p-calendar (onSelect)="selectDate($event)"></p-calendar>
+</div>
+<button (click)="initRestError()" class="btn btn-sm">Запрос с ошибкой</button>
+
+<div class="mt-3">
+  <button (click)="initSettingsData()" class="btn btn-sm">Обновить настройки</button>
+</div>
+
+
+<div class="mt-3">
+  <button (click)="initTours()" class="btn btn-sm">Сформировать туры</button>
+</div>
+
+<div class="mt-3">
+  <button (click)="deleteTours()" class="btn btn-sm">Удалить туры</button>
+</div>
+
+<p-toast position="top-left"></p-toast>
+
+
